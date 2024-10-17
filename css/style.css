@@ -405,6 +405,7 @@ button:focus {
   background-color: white;
   width: 100%;
   top: 30px;
+  margin-bottom: 30px;
   position: relative;
 }
 
@@ -416,7 +417,8 @@ button:focus {
 }
 
 .province-message{
-  padding-right: 50px;
+  padding-right: 30px;
+  min-width: 260px;
 }
 
 .current-province{
@@ -464,6 +466,51 @@ button:focus {
 
 .province-menu a:hover{
   text-decoration: underline;
+}
+
+.province-button-mobile{
+  background-color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: underline;
+  color: steelblue;
+  padding: 5px;
+  border: none;
+  display: none;
+}
+
+.province-button-mobile:hover{
+  background-color: lightgrey;
+  cursor: pointer;
+}
+
+.province-modal ul{
+  list-style-type: none;
+  padding: 0;
+  font-size: 14px;
+}
+
+.province-modal li{
+  padding-bottom: 10px;
+}
+
+.province-modal a{
+  color: steelblue;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.modal-header{
+  display: flex;
+}
+
+.modal-close{
+  text-align: right;
+  margin-left: auto;
+}
+
+.modal-close:hover{
+  cursor: pointer;
 }
 
 .hidden{
@@ -531,11 +578,34 @@ button:focus {
 
   .cards-container{
     display: block;
+    width: 90%;
   }
 
   .card{
-    width: 90%;
+    width: auto;
     overflow: hidden;
+    margin: 0 0 10px 0;
+  }
+
+  .province-content{
+    width: 90%;
+  }
+
+  .province-message{
+    min-width: auto;
+    font-size: 14px;
+  }
+
+  .province-select{
+    margin-left: auto;
+  }
+
+  .province-button{
+    display: none;
+  }
+
+  .province-button-mobile{
+    display: block;
   }
 
   .container{

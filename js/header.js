@@ -26,7 +26,26 @@ $(document).ready(function(){
     });
 
     $(".province-button").on("click", function(){
-        toggleProvinceSelector();
+        toggleProvinceSelector($("#province-menu"));
+    });
+
+    $(".province-button-mobile").on("click", function(){
+        toggleProvinceSelector($("#province-modal"));
+    });
+
+    $("#province-menu a").on("click", function(e){
+        setProvince(e.target);
+        toggleProvinceSelector($("#province-menu"));
+    });
+
+    $("#province-modal a").on("click", function(e){
+        setProvince(e.target);
+        toggleProvinceSelector($("#province-modal"));
+    });
+
+    $("#modal-close-button").on("click", function(e){
+        setProvince(e.target);
+        toggleProvinceSelector($("#province-modal"));
     });
 })
 
@@ -61,10 +80,14 @@ function closeCardModal(){
     $("#card-modal").addClass("invisible");
 }
 
-function toggleProvinceSelector(){
-    var menu = $("#province-menu");
+function toggleProvinceSelector(menu){
     if (menu.hasClass("hidden"))
         menu.removeClass("hidden");
     else
         menu.addClass("hidden");
+}
+
+function setProvince(p){
+    var province = $("#current-province");
+    province.text(p.text);
 }
