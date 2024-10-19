@@ -47,7 +47,29 @@ $(document).ready(function(){
         setProvince(e.target);
         toggleProvinceSelector($("#province-modal"));
     });
+
+    $("#dark-mode").on("click", function(e){
+        toggleDarkMode(e.target);
+    });
+
+    $("#dark-mode-mobile").on("click", function(e){
+        toggleDarkMode(e.target);
+    });
 })
+
+function toggleDarkMode(){
+    var main = $(".main");
+    var icon = $("#dark-mode");
+    if (main.hasClass("dark-mode")){
+        main.removeClass("dark-mode");
+        icon.text("☾");
+    }
+    else{
+        main.addClass("dark-mode");
+        icon.text("☀︎");
+    }
+    closeNav();
+}
 
 function openNav(){
     var closeButton = $("#close-button");

@@ -429,7 +429,7 @@ button:focus {
   background-color: white;
   font-size: 18px;
   font-weight: bold;
-  text-decoration: underline;
+  text-decoration: none;
   color: steelblue;
   padding: 5px;
   border: none;
@@ -547,9 +547,17 @@ button:focus {
     display: none;
   }
 
+  .mobile-nav:hover{
+    cursor: pointer;
+  }
+
   .mobile-nav-close{
     display: block;
     padding-right: 10px;
+  }
+
+  .mobile-nav-close:hover{
+    cursor: pointer;
   }
 
   .mobile-nav-close.hidden{
@@ -611,4 +619,81 @@ button:focus {
   .container{
     width: 95%;
   }
+}
+
+/* Dark mode */
+
+body.dark-mode{
+  color: white;
+}
+
+.main.dark-mode{
+  background-color: #333333;
+}
+
+.main.dark-mode a{
+  color: lightblue;
+}
+
+.main.dark-mode a:visited{
+  color: lavender;
+}
+
+.main.dark-mode #dark-mode{
+  color: lightgoldenrodyellow;
+}
+
+.dark-mode .hamburger-menu{
+  background-color: grey;
+}
+
+.dark-mode .province{
+  background-color: black;
+}
+
+.dark-mode .province-button{
+  color: aliceblue;
+  background-color: grey;
+}
+
+.dark-mode .province-button:hover{
+  background-color: #444444;
+}
+
+.dark-mode .province-menu{
+  background-color: black;
+}
+
+.dark-mode .card-modal{
+  background-color: black;
+}
+
+.dark-mode .modal-close{
+  filter: invert(100%);
+}
+
+.dark-mode .card{
+  background-color: black;
+}
+
+.dark-mode .card:hover{
+  box-shadow: 0 10px 10px 0 black;
+}
+
+.dark-mode .price{
+  color: lightcoral;
+}
+
+.dark-mode .card-button{
+  background-color: #444727;
+  color: white;
+}
+
+.dark-mode .card-button:hover{
+  background-color: #2e301a;
+  color: white;
+}
+
+.dark-mode .faq-list{
+  background-color: black;
 }

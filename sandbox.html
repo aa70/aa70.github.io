@@ -21,8 +21,7 @@
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
           <a href="sandbox.html">Sandbox</a>
-          <a aria-label="dark mode toggle">☾</a>
-          <a aria-label="light mode toggle" class="hidden">☀︎</a>
+          <a id="dark-mode" href="javascript:void(0)" aria-label="dark mode toggle">☾</a>
       </div>
       <div id="hamburger" class="mobile-nav" tabindex="0">
         <svg width="24" height="22" viewBox="0 0 28 15" fill="none" xmlns="http://www.w3.org/2000/svg" id="nav">
@@ -43,7 +42,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="sandbox.html">Sandbox</a></li>
-      <li><a>Toggle dark/light mode</a></li>
+      <li><a id="dark-mode-mobile" href="javascript:void(0)">Toggle dark/light mode</a></li>
     </ul>
   </div>
 
@@ -53,6 +52,7 @@
       <p class="body-text">This page is to showcase some front-end components I've made. All of these are built by me using only JavaScript and jQuery. Some of them are based on components I worked with during my time at Bell.</p>
       <p class="body-text">Jump to a component:</p>
     <ul class="body-text">
+      <li><a href="#province">Theme changer</a></li>
       <li><a href="#province">Province selector</a></li>
       <li><a href="#product-cards">Cards</a></li>
       <li><a href="#collapsible">Collapsible sections</a></li>
@@ -72,6 +72,11 @@
     </div>
   </div> -->
 
+  <div class="container">
+    <h2 class="txt-center" id="province">Theme changer</h2>
+    <p>Click the icon in the top left or the bottom option in the mobile menu to change between light and dark mode. This works on any page of this site.</p>
+  </div>
+
   
   <div class="container">
     <h2 class="txt-center" id="province">Province selector</h2>
@@ -81,11 +86,11 @@
     <div class="province-content">
       <div class="province-message">
         <div class="body-text">Your current region is:</div>
-        <div id="current-province" class="current-province">Ontario</div>
+        <div id="current-province" class="current-province body-text">Ontario</div>
       </div>
       <div class="province-select">
-        <button class="province-button">Change</button>
-        <button class="province-button-mobile">Change</button>
+        <button class="province-button body-text">Change</button>
+        <button class="province-button-mobile body-text">Change</button>
         <div id="province-menu" class="province-menu hidden">
           <ul>
             <li><a class="body-text" href="javascript:void(0)">Alberta</a></li>
