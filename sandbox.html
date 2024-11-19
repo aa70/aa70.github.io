@@ -7,140 +7,69 @@
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
     <script src="js/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="js/header.js"></script>
+    <script type="text/javascript" src="js/sandbox.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
   <body id="top" class="main">
+    <div class="hamburger-menu hidden" id="menu" aria-expanded="false">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sandbox.html">Sandbox</a></li>
+        <li><a id="dark-mode-mobile" href="javascript:void(0)">Dark mode</a></li>
+        <li><a id="motion-mobile" href="javascript:void(0)">Turn OFF motion</a></li>
+      </ul>
+    </div>
+    <div id="back-to-top" class="main-button hidden"><a href="#top">Back to top</a></div>
+    <div class="container">
+      <div class="header">
+        <div class="header-left">
+            <span class="body-text txt-bold">Arthur Adamo</span>
+        </div>
+        <div class="body-text header-right">
+            <a href="index.html">Home</a>
+            <a href="sandbox.html">Sandbox</a>
+        </div>
+        <div id="hamburger" class="mobile-nav" tabindex="0">
+          <svg width="24" height="22" viewBox="0 0 28 15" fill="none" xmlns="http://www.w3.org/2000/svg" id="nav">
+            <line y1="0.5" x2="24" y2="0.5" stroke="black" stroke-width="2"></line>
+            <line y1="7.5" x2="24" y2="7.5" stroke="black" stroke-width="2"></line>
+            <line y1="14.5" x2="24" y2="14.5" stroke="black" stroke-width="2"></line>
+          </svg>
+        </div>
+        <div id="close-button" class="mobile-nav-close hidden" tabindex="0">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" id="navX">
+            <path d="M1.10057 1.10054L20.8996 20.8995" stroke="black" stroke-width="2"></path>
+            <path d="M1.10059 20.8995L20.8996 1.10055" stroke="black" stroke-width="2"></path>
+          </svg>
+        </div>
+    </div>
     <div class="header">
-      <div class="header-left">
-          <span class="body-text">Arthur Adamo</span>
+      <div class="header-left"></div>
+      <div class="header-right">
+        <a class="toggle" id="dark-mode" href="javascript:void(0)" aria-label="dark mode toggle">Dark mode ☾ 
+          <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M18 24h-12c-3.311 0-6-2.689-6-6s2.689-6 6-6h12.039c3.293.021 5.961 2.701 5.961 6 0 3.311-2.688 6-6 6zm-12-10c2.208 0 4 1.792 4 4s-1.792 4-4 4-4-1.792-4-4 1.792-4 4-4z"/></svg>
+        </a>
+        <a class="toggle" id="reduce-motion" href="javascript:void(0)" aria-label="motion toggle">Reduce motion
+          <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M18 24h-12c-3.311 0-6-2.689-6-6s2.689-6 6-6h12.039c3.293.021 5.961 2.701 5.961 6 0 3.311-2.688 6-6 6zm-12-10c2.208 0 4 1.792 4 4s-1.792 4-4 4-4-1.792-4-4 1.792-4 4-4z"/></svg>
+        </a>
       </div>
-      <div class="body-text header-right">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="sandbox.html">Sandbox</a>
-          <a id="dark-mode" href="javascript:void(0)" aria-label="dark mode toggle">☾</a>
-      </div>
-      <div id="hamburger" class="mobile-nav" tabindex="0">
-        <svg width="24" height="22" viewBox="0 0 28 15" fill="none" xmlns="http://www.w3.org/2000/svg" id="nav">
-          <line y1="0.5" x2="24" y2="0.5" stroke="white" stroke-width="2"></line>
-          <line y1="7.5" x2="24" y2="7.5" stroke="white" stroke-width="2"></line>
-          <line y1="14.5" x2="24" y2="14.5" stroke="white" stroke-width="2"></line>
-        </svg>
-      </div>
-      <div id="close-button" class="mobile-nav-close hidden" tabindex="0" aria-label="Close">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" id="navX">
-          <path d="M1.10057 1.10054L20.8996 20.8995" stroke="white" stroke-width="2"></path>
-          <path d="M1.10059 20.8995L20.8996 1.10055" stroke="white" stroke-width="2"></path>
-        </svg>
-      </div>
-  </div>
-  <div class="hamburger-menu hidden" id="menu" aria-expanded="false">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="sandbox.html">Sandbox</a></li>
-      <li><a id="dark-mode-mobile" href="javascript:void(0)">Toggle dark/light mode</a></li>
-    </ul>
+    </div>
   </div>
 
   <div class="container">
     <div class="content">
       <h1>Sandbox</h1>
       <p class="body-text">This page is to showcase some front-end components I've made. All of these are built by me using only JavaScript and jQuery. Some of them are based on components I worked with during my time at Bell.</p>
+      <p>These components are responsive as well! Try viewing them in mobile view and in dark mode.</p>
       <p class="body-text">Jump to a component:</p>
     <ul class="body-text">
-      <li><a href="#province">Theme changer</a></li>
-      <li><a href="#province">Province selector</a></li>
       <li><a href="#product-cards">Cards</a></li>
       <li><a href="#collapsible">Collapsible sections</a></li>
     </ul>
     </div>
-  </div>
-<!--   <div class="container classic">
-    <div class="sidebar classic">
-      <ul>
-        <li><a>Modern</a></li>
-        <li><a>Classic</a></li>
-        <li><a>Third One</a></li>
-      </ul>
-    </div>
-    <div class="content classic">
-      <p class="body-text">I am a full-stack web developer with multiple years of experience under my belt working for Bell Canada. I have experience with both front- and back-end development, but I specialize more with front-end. I made this site from scratch to showcase my front-end skills in particular. Check out the sandbox page for some examples of components I've built in the past.</p>
-    </div>
-  </div> -->
-
-  <div class="container">
-    <h2 class="txt-center" id="province">Theme changer</h2>
-    <p>Click the icon in the top left or the bottom option in the mobile menu to change between light and dark mode. This works on any page of this site.</p>
-  </div>
-
-  
-  <div class="container">
-    <h2 class="txt-center" id="province">Province selector</h2>
-  </div>
-
-  <div class="province">
-    <div class="province-content">
-      <div class="province-message">
-        <div class="body-text">Your current region is:</div>
-        <div id="current-province" class="current-province body-text">Ontario</div>
-      </div>
-      <div class="province-select">
-        <button class="province-button body-text">Change</button>
-        <button class="province-button-mobile body-text">Change</button>
-        <div id="province-menu" class="province-menu hidden">
-          <ul>
-            <li><a class="body-text" href="javascript:void(0)">Alberta</a></li>
-            <li><a class="body-text" href="javascript:void(0)">British Columbia</a></li>
-            <li><a class="body-text" href="javascript:void(0)">Manitoba</a></li>
-            <li><a class="body-text" href="javascript:void(0)">New Brunswick</a></li>
-            <li><a class="body-text" href="javascript:void(0)">Newfoundland and Labrador</a></li>
-            <li><a class="body-text" href="javascript:void(0)">Northwest Territories</a></li>
-            <li><a class="body-text" href="javascript:void(0)">Nova Scotia</a></li>
-            <li><a class="body-text" href="javascript:void(0)">Nunavut</a></li>
-            <li><a class="body-text" href="javascript:void(0)">Ontario</a></li>
-            <li><a class="body-text" href="javascript:void(0)">Prince Edward Island</a></li>
-            <li><a class="body-text" href="javascript:void(0)">Quebec</a></li>
-            <li><a class="body-text" href="javascript:void(0)">Saskatchewan</a></li>
-            <li><a class="body-text" href="javascript:void(0)">Yukon</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div id="province-modal" class="province-modal card-modal-bg hidden">
-      <div class="card-modal">
-        <div class="modal-header">
-          <div class="body-text">Select a province</div>
-          <div id="modal-close-button" class="modal-close" tabindex="0" aria-label="Close">
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" id="navX">
-              <path d="M1.10057 1.10054L20.8996 20.8995" stroke="black" stroke-width="2"></path>
-              <path d="M1.10059 20.8995L20.8996 1.10055" stroke="black" stroke-width="2"></path>
-            </svg>
-          </div>
-        </div>
-        <ul>
-          <li><a class="body-text" href="javascript:void(0)">Alberta</a></li>
-          <li><a class="body-text" href="javascript:void(0)">British Columbia</a></li>
-          <li><a class="body-text" href="javascript:void(0)">Manitoba</a></li>
-          <li><a class="body-text" href="javascript:void(0)">New Brunswick</a></li>
-          <li><a class="body-text" href="javascript:void(0)">Newfoundland and Labrador</a></li>
-          <li><a class="body-text" href="javascript:void(0)">Northwest Territories</a></li>
-          <li><a class="body-text" href="javascript:void(0)">Nova Scotia</a></li>
-          <li><a class="body-text" href="javascript:void(0)">Nunavut</a></li>
-          <li><a class="body-text" href="javascript:void(0)">Ontario</a></li>
-          <li><a class="body-text" href="javascript:void(0)">Prince Edward Island</a></li>
-          <li><a class="body-text" href="javascript:void(0)">Quebec</a></li>
-          <li><a class="body-text" href="javascript:void(0)">Saskatchewan</a></li>
-          <li><a class="body-text" href="javascript:void(0)">Yukon</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <p class="body-text">This province selector does not actually check your location but the functionality is similar to that found on Bell. Try resizing the window or viewing on a mobile device for a different version of the selection menu.</p>
   </div>
   
   <div class="container">
@@ -223,43 +152,16 @@
             <h2 class="body-text main-text collapsible-link-expand">Are collapsible sections accessible?</h2>
           </button>
           <div class="body-text collapsible-content" style="display: none;">
-            <p>Yes! This type of component can be made to be navigated using the keyboard, such as the ones on this page. Content is shown and hidden to screen readers as well.</p>
+            <p>Yes, this type of component can be made to be navigable using the keyboard. Content is shown and hidden to screen readers accordingly, and the aria expanded property is updated.</p>
           </div>
           <hr class="main-text">
         </div>
       </div>
     </div>
   </div>
-
-  <div class="container" style="padding-bottom: 30px;">
-    <p class="body-text txt-center"><a href="#top">Back to top</a></p>
-  </div>
   <div class="footer">
     <hr></hr>
     <div class="container">Hosted by Github Pages</div>
   </div>
-
-  <script>
-
-    $(".collapsible-link").on("click", function(event) {
-        expand(this);
-    });
-
-    function expand(funny) {
-      var expand = funny.nextElementSibling;
-      var symbol = funny.firstElementChild;
-      if (expand.style.display === 'none') {
-          expand.style.display = 'block';
-          symbol.innerHTML = '-';
-        } else {
-          expand.style.display = 'none';
-          symbol.innerHTML = '+';
-        }
-      var isExpanded = funny.getAttribute("aria-expanded") == "true" ? "false" : "true";
-      funny.setAttribute("aria-expanded", isExpanded);
-    };
-
-  </script>
-   
   </body>
 </html>
