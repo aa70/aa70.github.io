@@ -123,6 +123,10 @@ a:hover{
   text-decoration: underline;
 }
 
+.flex{
+  display: flex;
+}
+
 /* Nav */
 
 .mobile-nav{
@@ -140,7 +144,7 @@ a:hover{
 .hamburger-menu{
   position: fixed;
   top: 40px;
-  background-color: darkgrey;
+  background-color: lightgrey;
   border: 1px solid black;
   width: 100%;
   z-index: 10;
@@ -155,14 +159,20 @@ a:hover{
   padding: 20px;
   list-style-type: none;
   border: 1px solid black;
-  color: black;
 }
 
 .hamburger-menu li a{
   text-decoration: none;
-  color: black;
   font-family: Montserrat,sans-serif;
   font-weight: bold;
+}
+
+#dark-mode-mobile{
+  color: black;
+}
+
+#motion-mobile{
+  color: black;
 }
 
 .hamburger-menu li a:hover{
@@ -272,6 +282,7 @@ padding: 0 10px;
   font-size: 20px;
   padding: 10px;
   border-radius: 20px;
+  margin-right: 5px;
 }
 
 .main-button a{
@@ -417,6 +428,10 @@ button:focus {
   max-width: 100%;
 }
 
+.card-title{
+  font-size: 28px;
+}
+
 .price{
   color: steelblue;
   font-family: Montserrat;
@@ -472,10 +487,11 @@ button:focus {
   border: 1px solid grey;
   position: absolute;
   z-index: 10;
+  padding: 0 15px 0 15px;
 }
 
 .province-menu ul{
-  padding: 0 15px 0 15px;
+  padding: 0;
 }
 
 .province-menu li{
@@ -540,12 +556,39 @@ button:focus {
   cursor: pointer;
 }
 
-#dark-mode:hover{
-  text-decoration: none;
+/* LCD Game */
+
+canvas {
+  background: rgb(241, 236, 236);
+  display: block;
+  margin: 0 auto;
+}
+
+.game-button{
+  margin-top: 5px;
+  padding: 10px 50px 10px 50px;
+}
+
+#run-button{
+  font-size: 26px;
+  padding: 5px;
+}
+
+@font-face {
+  font-family: 'Digital7';
+  src: url('../font/digital-7.ttf')  format('truetype');
 }
 
 .hidden{
   display: none;
+}
+
+.hidden-big{
+  display: none;
+}
+
+.pad-top{
+  padding-top: 30px;
 }
 
 .invisible{
@@ -667,6 +710,14 @@ button:focus {
   .container{
     width: 95%;
   }
+
+  .hidden-big{
+    display: block;
+  }
+
+  .hidden-small{
+    display: none;
+  }
 }
 
 /* Dark mode */
@@ -755,6 +806,6 @@ body.dark-mode{
   border: 1px solid #8c498c;
 }
 
-.main.dark-mode .hamburger-menu li a{
-  color: white;
+#dark-mode:hover{
+  text-decoration: none;
 }

@@ -15,10 +15,11 @@
   <body class="main">
     <div class="hamburger-menu hidden" id="menu" aria-expanded="false">
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a id="first-link" href="index.html">Home</a></li>
+        <li><a href="about.html">Case studies</a></li>
         <li><a href="sandbox.html">Sandbox</a></li>
-        <li><a id="dark-mode-mobile" href="javascript:void(0)">Dark mode</a></li>
-        <li><a id="motion-mobile" href="javascript:void(0)">Turn OFF motion</a></li>
+        <li><a id="dark-mode-mobile" href="javascript:void(0)" role="button" aria-pressed="false">Dark mode ☾</a></li>
+        <li><a id="motion-mobile" href="javascript:void(0)" role="button" aria-pressed="false">Turn OFF motion</a></li>
       </ul>
     </div>
     <div id="back-to-top" class="hidden"> <button class="main-button" tabindex="-1"><a href="#top">Back to top</a></button></div>
@@ -27,18 +28,19 @@
         <div class="header-left">
             <span class="body-text txt-bold">Arthur Adamo</span>
         </div>
-        <div class="body-text header-right">
-          <a href="index.html">Home</a>
-          <a href="sandbox.html">Sandbox</a>
+        <div class="body-text header-right flex">
+          <div><a href="index.html">Home</a></div>
+          <div><a href="about.html">Case studies</a></div>
+          <div><a href="sandbox.html">Sandbox</a></div>
         </div>
-        <div id="hamburger" class="mobile-nav" tabindex="0">
+        <div id="hamburger" class="mobile-nav" tabindex="0" role="button" aria-label="open navigation">
           <svg width="24" height="22" viewBox="0 0 28 15" fill="none" xmlns="http://www.w3.org/2000/svg" id="nav">
             <line y1="0.5" x2="24" y2="0.5" stroke="black" stroke-width="2"></line>
             <line y1="7.5" x2="24" y2="7.5" stroke="black" stroke-width="2"></line>
             <line y1="14.5" x2="24" y2="14.5" stroke="black" stroke-width="2"></line>
           </svg>
         </div>
-        <div id="close-button" class="mobile-nav-close hidden" tabindex="0">
+        <div id="close-button" class="mobile-nav-close hidden" tabindex="0" role="button" aria-label="close navigation">
           <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" id="navX">
             <path d="M1.10057 1.10054L20.8996 20.8995" stroke="black" stroke-width="2"></path>
             <path d="M1.10059 20.8995L20.8996 1.10055" stroke="black" stroke-width="2"></path>
@@ -47,110 +49,39 @@
     </div>
     <div class="header">
       <div class="header-left"></div>
-      <div class="header-right">
-        <a class="toggle" id="dark-mode" href="javascript:void(0)" aria-label="dark mode toggle">Dark mode ☾ 
-          <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M18 24h-12c-3.311 0-6-2.689-6-6s2.689-6 6-6h12.039c3.293.021 5.961 2.701 5.961 6 0 3.311-2.688 6-6 6zm-12-10c2.208 0 4 1.792 4 4s-1.792 4-4 4-4-1.792-4-4 1.792-4 4-4z"/></svg>
-        </a>
-        <a class="toggle" id="reduce-motion" href="javascript:void(0)" aria-label="motion toggle">Reduce motion
-          <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M18 24h-12c-3.311 0-6-2.689-6-6s2.689-6 6-6h12.039c3.293.021 5.961 2.701 5.961 6 0 3.311-2.688 6-6 6zm-12-10c2.208 0 4 1.792 4 4s-1.792 4-4 4-4-1.792-4-4 1.792-4 4-4z"/></svg>
-        </a>
+      <div class="header-right flex">
+        <div>
+          <a role="button" class="toggle" id="dark-mode" href="javascript:void(0)" aria-label="dark mode toggle" aria-pressed="false">Dark mode ☾ 
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M18 24h-12c-3.311 0-6-2.689-6-6s2.689-6 6-6h12.039c3.293.021 5.961 2.701 5.961 6 0 3.311-2.688 6-6 6zm-12-10c2.208 0 4 1.792 4 4s-1.792 4-4 4-4-1.792-4-4 1.792-4 4-4z"/></svg>
+          </a>
+        </div>
+        <div>
+          <a role="button" class="toggle" id="reduce-motion" href="javascript:void(0)" aria-label="motion toggle" aria-pressed="false">Reduce motion
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M18 24h-12c-3.311 0-6-2.689-6-6s2.689-6 6-6h12.039c3.293.021 5.961 2.701 5.961 6 0 3.311-2.688 6-6 6zm-12-10c2.208 0 4 1.792 4 4s-1.792 4-4 4-4-1.792-4-4 1.792-4 4-4z"/></svg>
+          </a>
+        </div>
       </div>
     </div>
       <div class="content">        
         <h1 class="h1-animate">Arthur Adamo</h1>
         <h2 class="h2-animate txt-center">Full-stack web developer</h2>
         <div class="section big-text">
-          <p class="body-text p-animate">Welcome! I'm Arthur, a full-stack web developer with multiple years of experience under my belt working for Bell Canada. I have experience with both front and back-end development, with a specialization in front-end. I built this website myself to showcase my past work and some of my front-end skills.</p>
-          <p class="body-text p-animate">Scroll down a bit to learn more about my work, and check out the sandbox for some examples of components I've built.</p>
-          <p class="body-text p-animate">This site is entirely responsive. Try resizing the window or viewing on a mobile device to see changes in layout. Use the top bar to navigate, to change themes or to reduce motion effects.</p>
+          <p class="body-text p-animate">Welcome! I'm Arthur, a full-stack web developer with over six years of experience working for Bell Canada. I have experience with both front and back-end development, with a specialization in front-end. I built this website myself to showcase my past work and some of my front-end skills.</p>
+          <p class="body-text p-animate">This site is entirely responsive. Try resizing the window or viewing on a mobile device to see changes in layout. Use the top bar to navigate, to change themes or to reduce motion effects. I've also made this website as accessible as it can be.</p>
         </div>
 
         <div class="section">
-          <h2 class="h2-animate" id="about">About me</h1>
-          <p class="body-text p-animate">I'm a full-stack web developer with a specialty in front-end development. I spend a good amount of my free time coding and making websites such as this, but I also have professional experience with web development. A couple of case studies can be seen on this page.</p>
-          <p class="body-text p-animate">After graduating from York University with a bachelor's in computer science, I went to work for Bell Canada at their Creekbank campus. There I worked on maintaining and updating pages on bell.ca, which is made up of an ASP.NET MVC application that receives hundreds of changes each day. The following case studies showcase some of my highlights at Bell.</p>
-
-          <h3 class="about-heading h2-animate" id="province-selector">Province selector with GeoIP</h2>
-          <p class="body-text p-animate">If you go to bell.ca today without cookies saved, you will see a bar come up that automatically detects your province if you live in Canada, and prompts the user to change. I was among the team who worked on this component initally. The idea came from a couple of other developers at Bell and I began development before we had a design in place. I began by making a layout myself and then molding it to the existing design some weeks later. Then with the help of the team I connected the front-end to a service that would automatically detect the user's province based on their IP address.</p>
-          <p class="body-text p-animate">We used the Geolocation service <a href="https://www.maxmind.com/en/home">MaxMind GeoIP API</a> for this project as it was lightweight and easy to integrate. With the help of the team we successfully managed to integrate the service to detect the user's province based on their IP address. Next came saving cookies to the user's device as well as finishing the component according to design specifics.</p>
-          <p class="body-text p-animate">The old layout for this component on desktop consisted a modal window that would cover the entire screen, and didn't have automatic geolocation. This was very intrusive for users who were on private browsing or didn't have cookies enabled. The new banner-style province selector automatically sets the user's region and lets them change it through a dropdown menu. This design has been considered much more compact and useful, and is still being used on the site today!</p>
-          <p class="body-text p-animate">I made a recreation of the province selector here. Try using it on both desktop and mobile views. It does not use any Geolocation service but it still embodies the compact and efficient design of the one at Bell.</p>
-
-          <div class="province">
-            <div class="province-content">
-              <div class="province-message">
-                <div class="body-text">Your current region is:</div>
-                <div id="current-province" class="current-province body-text">Ontario</div>
-              </div>
-              <div class="province-select">
-                <button class="province-button body-text">Change</button>
-                <button class="province-button-mobile body-text">Change</button>
-                <div id="province-menu" class="province-menu invisible">
-                  <ul>
-                    <li><a class="body-text" href="javascript:void(0)">Alberta</a></li>
-                    <li><a class="body-text" href="javascript:void(0)">British Columbia</a></li>
-                    <li><a class="body-text" href="javascript:void(0)">Manitoba</a></li>
-                    <li><a class="body-text" href="javascript:void(0)">New Brunswick</a></li>
-                    <li><a class="body-text" href="javascript:void(0)">Newfoundland and Labrador</a></li>
-                    <li><a class="body-text" href="javascript:void(0)">Northwest Territories</a></li>
-                    <li><a class="body-text" href="javascript:void(0)">Nova Scotia</a></li>
-                    <li><a class="body-text" href="javascript:void(0)">Nunavut</a></li>
-                    <li><a class="body-text" href="javascript:void(0)">Ontario</a></li>
-                    <li><a class="body-text" href="javascript:void(0)">Prince Edward Island</a></li>
-                    <li><a class="body-text" href="javascript:void(0)">Quebec</a></li>
-                    <li><a class="body-text" href="javascript:void(0)">Saskatchewan</a></li>
-                    <li><a class="body-text" href="javascript:void(0)">Yukon</a></li>
-                  </ul>
-                </div>
-              </div>
+          <h2 class="h2-animate" id="about">About me</h2>
+          <p class="body-text p-animate">I'm a full-stack web developer with a specialty in front-end development. I spend a good amount of my free time coding and making websites such as this, but I also have professional experience with web development. A couple of case studies of my work can be seen on the respective page.</p>
+          <p class="body-text p-animate">After graduating from York University with a bachelor's in computer science, I went to work for Bell Canada at their Creekbank campus. There I worked on maintaining and updating pages on bell.ca, which is made up of an ASP.NET MVC application that receives hundreds of changes each day. Check the case studies page to see what I've done professionally, or the sandbox for some of my personal front-end projects.</p>
+          <div class="flex">
+            <div class="flex">
+              <button class="main-button" tabindex="-1"><a href="about.html">Case studies</a></button>
             </div>
-            <div id="province-modal" class="province-modal card-modal-bg invisible">
-              <div class="card-modal">
-                <div class="modal-header">
-                  <div class="body-text">Select a province</div>
-                  <div id="modal-close-button" class="modal-close" tabindex="0" aria-label="Close">
-                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" id="navX">
-                      <path d="M1.10057 1.10054L20.8996 20.8995" stroke="black" stroke-width="2"></path>
-                      <path d="M1.10059 20.8995L20.8996 1.10055" stroke="black" stroke-width="2"></path>
-                    </svg>
-                  </div>
-                </div>
-                <ul>
-                  <li><a class="body-text" href="javascript:void(0)">Alberta</a></li>
-                  <li><a class="body-text" href="javascript:void(0)">British Columbia</a></li>
-                  <li><a class="body-text" href="javascript:void(0)">Manitoba</a></li>
-                  <li><a class="body-text" href="javascript:void(0)">New Brunswick</a></li>
-                  <li><a class="body-text" href="javascript:void(0)">Newfoundland and Labrador</a></li>
-                  <li><a class="body-text" href="javascript:void(0)">Northwest Territories</a></li>
-                  <li><a class="body-text" href="javascript:void(0)">Nova Scotia</a></li>
-                  <li><a class="body-text" href="javascript:void(0)">Nunavut</a></li>
-                  <li><a class="body-text" href="javascript:void(0)">Ontario</a></li>
-                  <li><a class="body-text" href="javascript:void(0)">Prince Edward Island</a></li>
-                  <li><a class="body-text" href="javascript:void(0)">Quebec</a></li>
-                  <li><a class="body-text" href="javascript:void(0)">Saskatchewan</a></li>
-                  <li><a class="body-text" href="javascript:void(0)">Yukon</a></li>
-                </ul>
-              </div>
+            <div>
+              <button class="main-button" tabindex="-1"><a href="sandbox.html">The Sandbox</a></button>
             </div>
           </div>
-
-          <h3 class="about-heading h2-animate" id="form-generator">Form generator using React</h2>
-          <p class="body-text p-animate">React is JavaScript library that has become particularly popular in recent years. One such project at Bell was to create an app that would generate a form based on user input. This would be used internally by employees to generate new forms. There are a lot of forms on Bell.ca, and this would prevent the need for having to make a brand new template every time a new form is needed.</p>
-          <p class="body-text p-animate">This project had us restricted to pure React, as Bell didn't want to use external libraries. Regardless we ended up using many core elements of React in this project such as the useEffect and useState hooks. When the form is submitted, this would trigger a depedency that updates the useEffect hook and submit the form. We had built a number of form templates that were styled according to the user's input on what layout and input types they wanted.</p>
-
-          <h3 class="about-heading h2-animate" id="aliant">Bell Aliant ordering</h2>
-          <p class="body-text p-animate">Bell Aliant is a subsidiary of Bell Canada that provides services in the Atlantic provinces. Prior to 2022, wireless home internet products could only be ordered by Bell Aliant customers by phone or filling out a web form. The aim of this project was to establish a new connection between the front and back-end that would allow Aliant customers to order these products online. This involved a good amount of back-end development and a lot of troubleshooting, as I was not familiar with the architecture of the Bell Aliant website prior. Much of the existing MVC application had to be reworked to enable this to happen.</p>
-
-          <h3 class="about-heading h2-animate" id="print-email">Print & Email with PDFLib</h2>
-          <p class="body-text p-animate">This was one of the earliest projects I had a degree of freedom with at Bell. This was a project that was meant to launch in 2016 but was held back due to changes in business. It changed hands a few times until it ended up with me.</p>
-          <p class="body-text p-animate">The aim of this project was to make a brochure in Adobe's PDF format that would dynamically generate TV channel names and logos based on what is available in the customer's area. It also included pricing information for available TV packages and addons. I was tasked with implementing the layout of the brochure based on mockups from the design team. This involved usage of <a href="https://www.pdflib.com/">PDFLib</a>, a developer library for dynamically generating and manipulating PDFs. There was a lot of trial and error and some painstaking work in placing all the elements according to the design and making sure all the pages generated correctly but we got the project finished by the end of 2017!</p>
-          <p class="body-text p-animate">Print and email marks the first time bell.ca had any sort of dynamic PDF generation. However this feature now seems to be deprecated on bell.ca.</p>
-        </div>
-
-        <div class="section">
-          <h2 class="h2-animate" id="sandbox">Sandbox</h2>
-          <p class="body-text p-animate">Does the province selector component above intrigue you? Do you want to see similar components? Check out the sandbox for more components and demos!</p>
-          <button class="main-button" tabindex="-1"><a href="sandbox.html">The Sandbox</a></button>
         </div>
       </div>
     </div>

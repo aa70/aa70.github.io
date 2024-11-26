@@ -16,10 +16,11 @@
   <body id="top" class="main">
     <div class="hamburger-menu hidden" id="menu" aria-expanded="false">
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a id="first-link" href="index.html">Home</a></li>
+        <li><a href="about.html">Case studies</a></li>
         <li><a href="sandbox.html">Sandbox</a></li>
-        <li><a id="dark-mode-mobile" href="javascript:void(0)">Dark mode</a></li>
-        <li><a id="motion-mobile" href="javascript:void(0)">Turn OFF motion</a></li>
+        <li><a id="dark-mode-mobile" href="javascript:void(0)" role="button" aria-pressed="false">Dark mode ☾</a></li>
+        <li><a id="motion-mobile" href="javascript:void(0)" role="button" aria-pressed="false">Turn OFF motion</a></li>
       </ul>
     </div>
     <div id="back-to-top" class="main-button hidden"><a href="#top">Back to top</a></div>
@@ -28,18 +29,19 @@
         <div class="header-left">
             <span class="body-text txt-bold">Arthur Adamo</span>
         </div>
-        <div class="body-text header-right">
-            <a href="index.html">Home</a>
-            <a href="sandbox.html">Sandbox</a>
+        <div class="body-text header-right flex">
+          <div><a href="index.html">Home</a></div>
+          <div><a href="about.html">Case studies</a></div>
+          <div><a href="sandbox.html">Sandbox</a></div>
         </div>
-        <div id="hamburger" class="mobile-nav" tabindex="0">
+        <div id="hamburger" class="mobile-nav" tabindex="0" role="button" aria-label="open navigation">
           <svg width="24" height="22" viewBox="0 0 28 15" fill="none" xmlns="http://www.w3.org/2000/svg" id="nav">
             <line y1="0.5" x2="24" y2="0.5" stroke="black" stroke-width="2"></line>
             <line y1="7.5" x2="24" y2="7.5" stroke="black" stroke-width="2"></line>
             <line y1="14.5" x2="24" y2="14.5" stroke="black" stroke-width="2"></line>
           </svg>
         </div>
-        <div id="close-button" class="mobile-nav-close hidden" tabindex="0">
+        <div id="close-button" class="mobile-nav-close hidden" tabindex="0" role="button" aria-label="close navigation">
           <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" id="navX">
             <path d="M1.10057 1.10054L20.8996 20.8995" stroke="black" stroke-width="2"></path>
             <path d="M1.10059 20.8995L20.8996 1.10055" stroke="black" stroke-width="2"></path>
@@ -48,45 +50,72 @@
     </div>
     <div class="header">
       <div class="header-left"></div>
-      <div class="header-right">
-        <a class="toggle" id="dark-mode" href="javascript:void(0)" aria-label="dark mode toggle">Dark mode ☾ 
-          <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M18 24h-12c-3.311 0-6-2.689-6-6s2.689-6 6-6h12.039c3.293.021 5.961 2.701 5.961 6 0 3.311-2.688 6-6 6zm-12-10c2.208 0 4 1.792 4 4s-1.792 4-4 4-4-1.792-4-4 1.792-4 4-4z"/></svg>
-        </a>
-        <a class="toggle" id="reduce-motion" href="javascript:void(0)" aria-label="motion toggle">Reduce motion
-          <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M18 24h-12c-3.311 0-6-2.689-6-6s2.689-6 6-6h12.039c3.293.021 5.961 2.701 5.961 6 0 3.311-2.688 6-6 6zm-12-10c2.208 0 4 1.792 4 4s-1.792 4-4 4-4-1.792-4-4 1.792-4 4-4z"/></svg>
-        </a>
+      <div class="header-right flex">
+        <div>
+          <a role="button" class="toggle" id="dark-mode" href="javascript:void(0)" aria-label="dark mode toggle" aria-pressed="false">Dark mode ☾ 
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M18 24h-12c-3.311 0-6-2.689-6-6s2.689-6 6-6h12.039c3.293.021 5.961 2.701 5.961 6 0 3.311-2.688 6-6 6zm-12-10c2.208 0 4 1.792 4 4s-1.792 4-4 4-4-1.792-4-4 1.792-4 4-4z"/></svg>
+          </a>
+        </div>
+        <div>
+          <a role="button" class="toggle" id="reduce-motion" href="javascript:void(0)" aria-label="motion toggle" aria-pressed="false">Reduce motion
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M18 24h-12c-3.311 0-6-2.689-6-6s2.689-6 6-6h12.039c3.293.021 5.961 2.701 5.961 6 0 3.311-2.688 6-6 6zm-12-10c2.208 0 4 1.792 4 4s-1.792 4-4 4-4-1.792-4-4 1.792-4 4-4z"/></svg>
+          </a>
+        </div>
       </div>
     </div>
   </div>
 
   <div class="container">
     <div class="content">
-      <h1>Sandbox</h1>
-      <p class="body-text">This page is to showcase some front-end components I've made. All of these are built by me using only JavaScript and jQuery. Some of them are based on components I worked with during my time at Bell.</p>
-      <p>These components are responsive as well! Try viewing them in mobile view and in dark mode.</p>
-      <p class="body-text">Jump to a component:</p>
-    <ul class="body-text">
+      <h1 class="h1-animate">Sandbox</h1>
+      <p class="body-text p-animate">This page is to showcase some front-end components I've made. All of these are built by me using only JavaScript and jQuery. Some of them are based on components I made when on the job, while others are personal projects.</p>
+      <p class="body-text p-animate">These components are responsive as well! Try viewing them in mobile view and in dark mode.</p>
+      <p class="body-text p-animate">Components on this page:</p>
+    <ul class="body-text p-animate">
+      <li><a href="#features">Site-wide features</a></li>
+      <li><a href="#lcd-game">LCD-style game</a></li>
       <li><a href="#product-cards">Cards</a></li>
       <li><a href="#collapsible">Collapsible sections</a></li>
     </ul>
     </div>
   </div>
+
+  <div class="container pad-top">
+    <h2 id="features" class="h2-animate">Site-wide features</h2>
+    <p class="body-text p-animate">You may have noticed that there are two toggle buttons below the navigation at the top of the page. The first will change the page from day to night mode, for a darker theme that is easier on the eyes. The other will turn off animation effects for the text for those who are bothered by too much motion. Try them out on the other site pages!</p>
+    <p class="hidden-small body-text p-animate">In addition, all components on this website are responsive, apart from the LCD game. Try viewing this site on a mobile device or resizing the window to see how responsive design affects the page.</p>
+    <p class="hidden-big body-text p-animate">In addition, all components on this website are responsive, apart from the LCD game. Try viewing this site on a larger screen to see how responsive design affects the page.</p>
+  </div>
+
+  <div class="container pad-top">
+    <h2 class="txt-center" id="lcd-game">LCD-style game</h2>
+    <p>This is a small game made in pure JavaScript, based off of LCD screen games of the past. Click the left and right buttons to move the boat and catch the falling parachuters. Catching one will increase your score, and missing three will end the game. The game becomes progressively faster the more parachuters you save. The font used is Digital 7 by Style-7.</p>
+    <canvas id="LCD" width="480" height="320"></canvas>
+    <div class="txt-center">
+      <button id="run-button">START</button>
+    </div>
+    <div class="txt-center">
+      <span><button class="game-button" id="leftButton" aria-label="left">&lt;</button></span>
+      <span><button class="game-button" id="rightButton" aria-label="right">&gt;</button></span>
+    </div>
+  </div>
   
-  <div class="container">
+  <div class="container pad-top">
     <h2 class="txt-center" id="product-cards">Product cards</h2>
   </div>
-  <div id="card-modal" class="card-modal-bg invisible">
+  <div id="card-modal" class="card-modal-bg invisible" aria-modal="true" role="dialog" aria-labelledby="card-modal-label" aria-describedby="card-modal-desc">
     <div class="card-modal">
-      <h2 class="heading-text">Order successful</h2>
-      <p class="body-text">You have successfully ordered <span id="card-modal-meal">Dinner</span></p>
-      <p class="body-text">The button below receives focus when the lightbox is triggered, for ease of use when navigating with keyboard.</p>
+      <h2 id="card-modal-label" class="heading-text">Order successful</h2>
+      <div class="card-modal-desc">
+        <p class="body-text">You have successfully ordered <span id="card-modal-meal">Dinner</span></p>
+      </div>
       <button id="card-modal-close" class="card-button body-text">Close</button>
     </div>
   </div>
   <div class="cards-container">
     <div class="card">
-      <h2 class="card-title txt-center heading-text">Breakfast</h2>
-      <img class="card-img" src="img/Egg_and_cheese_breakfast_sandwich.jpg">
+      <h3 class="card-title txt-center heading-text">Breakfast</h3>
+      <img class="card-img" src="img/Egg_and_cheese_breakfast_sandwich.jpg" alt="Sausage, scrambled eggs and swiss cheese on rye">
       <p class="card-description body-text">
         Click the button below to "order" a product. This will display a modal window. These images are from Wikimedia Commons under a Creative Commons license.
       </p>
@@ -96,8 +125,8 @@
       <button id="breakfast" class="card-button body-text">Order now</button>
     </div>
     <div class="card">
-      <h2 class="card-title txt-center heading-text">Lunch</h2>
-      <img class="card-img" src="img/Swordfish_in_Limnionas,_Kos,_Greece_(5653643083).jpg">
+      <h3 class="card-title txt-center heading-text">Lunch</h3>
+      <img class="card-img" src="img/Swordfish_in_Limnionas,_Kos,_Greece_(5653643083).jpg" alt="Swordfish lunch with vegetables set in Limnionas, Kos, Greece">
       <p class="card-description body-text">
         These product cards are responsive. Try resizing the window or viewing on a mobile device to see changes in layout.
       </p>
@@ -107,8 +136,8 @@
       <button id="lunch" class="card-button body-text">Order now</button>
     </div>
     <div class="card">
-      <h2 class="card-title txt-center heading-text">Dinner</h2>
-      <img class="card-img" src="img/USDA_dinner_cropped.jpg">
+      <h3 class="card-title txt-center heading-text">Dinner</h3>
+      <img class="card-img" src="img/USDA_dinner_cropped.jpg" alt="An attractive dinner setting with Chicken, green beans and carrots on a plate">
       <p class="card-description body-text">
         This "card" style layout is based on similar components on bell.ca. Packages for TV and Internet come in a similar, easy to understand layout.
       </p>
@@ -119,7 +148,7 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container pad-top">
     <h2 class="txt-center" id="collapsible">Collapsible sections</h2>
   </div>
   <div class="faq-main">

@@ -26,26 +26,26 @@ $(document).ready(function(){
     });
 
     $(".province-button").on("click", function(){
-        toggleProvinceSelector($("#province-menu"));
+        toggleProvinceSelector($(".province-button"), $("#province-menu"));
     });
 
     $(".province-button-mobile").on("click", function(){
-        toggleProvinceSelector($("#province-modal"));
+        toggleProvinceSelector($(".province-button-mobile"), $("#province-modal"));
     });
 
     $("#province-menu a").on("click", function(e){
         setProvince(e.target);
-        toggleProvinceSelector($("#province-menu"));
+        toggleProvinceSelector($(".province-button"), $("#province-menu"));
     });
 
     $("#province-modal a").on("click", function(e){
         setProvince(e.target);
-        toggleProvinceSelector($("#province-modal"));
+        toggleProvinceSelector($(".province-button-mobile"), $("#province-modal"));
     });
 
     $("#modal-close-button").on("click", function(e){
         setProvince(e.target);
-        toggleProvinceSelector($("#province-modal"));
+        toggleProvinceSelector($(".province-button-mobile"), $("#province-modal"));
     });
 
     $("#dark-mode").on("click", function(e){
@@ -64,7 +64,6 @@ $(document).ready(function(){
         toggleMotion(e.target);
     });
 
-    var isAnimated = true;
     var options = {};
     var observer = new IntersectionObserver(observerCallback, options);
     var h1s = document.querySelectorAll('.h1-animate');
@@ -94,38 +93,46 @@ function toggleTopButton(){
 function toggleDarkMode(){
     var main = $(".main");
     var icon = $("#dark-mode");
+    var iconMobile = $("#dark-mode-mobile");
+    var isPressed = getAttrToggle(icon, "aria-pressed");
     if (main.hasClass("dark-mode")){
         main.removeClass("dark-mode");
         icon.html("Dark mode ☾ <svg width='24' height='24' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd'><path d='M18 24h-12c-3.311 0-6-2.689-6-6s2.689-6 6-6h12.039c3.293.021 5.961 2.701 5.961 6 0 3.311-2.688 6-6 6zm-12-10c2.208 0 4 1.792 4 4s-1.792 4-4 4-4-1.792-4-4 1.792-4 4-4z'/></svg>");
-        $('#dark-mode-mobile').text("Dark mode ☾");
+        iconMobile.text("Dark mode ☾");
     }
     else{
         main.addClass("dark-mode");
         icon.html("Light mode ☀︎ <svg width='24' height='24' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd'><path d='M6 24h12c3.311 0 6-2.689 6-6s-2.689-6-6-6h-12.039c-3.293.021-5.961 2.701-5.961 6 0 3.311 2.688 6 6 6zm12-10c-2.208 0-4 1.792-4 4s1.792 4 4 4 4-1.792 4-4-1.792-4-4-4z'/></svg>");
-        $('#dark-mode-mobile').text("Light mode ☀︎");
+        iconMobile.text("Light mode ☀︎");
     }
     var svgColor = main.hasClass("dark-mode") ? "white" : "black";
     $(".toggle svg").attr("fill", svgColor);
     $(".mobile-nav line").attr("stroke", svgColor);
     $(".mobile-nav-close path").attr("stroke", svgColor);
+    icon.attr("aria-pressed", isPressed);
+    iconMobile.attr("aria-pressed", isPressed);
     closeNav();
 }
 
 function toggleMotion(){
     var main = $(".main");
     var icon = $("#reduce-motion");
+    var iconMobile = $("#motion-mobile");
+    var isPressed = getAttrToggle($("#reduce-motion"), "aria-pressed");
     if (main.hasClass("no-motion")){
         main.removeClass("no-motion");
         icon.html("Reduce motion <svg width='24' height='24' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd'><path d='M18 24h-12c-3.311 0-6-2.689-6-6s2.689-6 6-6h12.039c3.293.021 5.961 2.701 5.961 6 0 3.311-2.688 6-6 6zm-12-10c2.208 0 4 1.792 4 4s-1.792 4-4 4-4-1.792-4-4 1.792-4 4-4z'/></svg>");
-        $('#motion-mobile').text("Turn OFF motion");
+        iconMobile.text("Turn OFF motion");
     }
     else{
         main.addClass("no-motion");
         icon.html("Reduce motion <svg width='24' height='24' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd'><path d='M6 24h12c3.311 0 6-2.689 6-6s-2.689-6-6-6h-12.039c-3.293.021-5.961 2.701-5.961 6 0 3.311 2.688 6 6 6zm12-10c-2.208 0-4 1.792-4 4s1.792 4 4 4 4-1.792 4-4-1.792-4-4-4z'/></svg>");
-        $('#motion-mobile').text("Turn ON motion");
+        iconMobile.text("Turn ON motion");
     }
     var svgColor = main.hasClass("dark-mode") ? "white" : "black";
     $(".toggle svg").attr("fill", svgColor);
+    icon.attr("aria-pressed", isPressed);
+    iconMobile.attr("aria-pressed", isPressed);
 }
 
 function openNav(){
@@ -136,6 +143,7 @@ function openNav(){
     menuButton.addClass("hidden");
     menu.removeClass("hidden");
     $(".hamburger-menu").attr("aria-expanded", true);
+    $("#first-link").trigger("focus");
 }
 
 function closeNav(){
@@ -148,7 +156,9 @@ function closeNav(){
     $(".hamburger-menu").attr("aria-expanded", false);
 }
 
-function toggleProvinceSelector(menu){
+function toggleProvinceSelector(provButton, menu){
+    var isExpanded = getAttrToggle(provButton, "aria-expanded");
+    provButton.attr("aria-expanded", isExpanded);
     if (menu.hasClass("invisible"))
         menu.removeClass("invisible");
     else
@@ -168,4 +178,8 @@ function observerCallback(entries, observer) {
                 entry.target.classList.add("animate");
         });
     }
+}
+
+function getAttrToggle(element, attr){
+    return element.attr(attr) == "true" ? "false" : "true";
 }
